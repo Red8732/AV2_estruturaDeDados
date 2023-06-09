@@ -40,4 +40,13 @@ public class HeapSort {
         v[j] = v[aposJ];
         v[aposJ] = aux;
     }
+    
+    public int[] heapSort(int[] array) {
+        long tempoinicial = System.currentTimeMillis();
+        array = HeapSort.sort(array);
+        long tempofinal = System.currentTimeMillis();
+        long tempototal = tempofinal - tempoinicial;
+        System.out.println("Tempo de Processamento de HeapSort: " + tempototal + "ms");
+        return array;
+    }
 }
