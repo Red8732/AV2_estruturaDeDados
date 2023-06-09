@@ -6,7 +6,8 @@ public class Executar {
 		
 	}
 	
-	public void print(int[] vetor) {
+	public static void print(int[] vetor) {
+		
 		for (int i = 0; i < vetor.length; i++) {
 			System.out.print(vetor[i] + " ");
 		}

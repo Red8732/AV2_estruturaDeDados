@@ -59,4 +59,13 @@ public class MergeSort {
         }
         return aux;
     }
+    
+    public int[] mergeSort(int[] array) {
+        long tempoinicial = System.currentTimeMillis();
+        array = MergeSort.sort(array);
+        long tempofinal = System.currentTimeMillis();
+        long tempototal = tempofinal - tempoinicial;
+        System.out.println("Tempo de Processamento de MergeSort: " + tempototal + "ms");
+        return array;
+    }
 }

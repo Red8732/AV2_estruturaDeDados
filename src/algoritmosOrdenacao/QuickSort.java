@@ -28,6 +28,14 @@ public class QuickSort {
         }
         vet[topo] = pivo;
         return topo;
-
+    }
+    
+    public int[] quickSort(int[] array) {
+        long tempoinicial = System.currentTimeMillis();
+        array = QuickSort.quickSort(array, 0, (array.length - 1));
+        long tempofinal = System.currentTimeMillis();
+        long tempototal = tempofinal - tempoinicial;
+        System.out.println("Tempo de Processamento de QuickSort: " + tempototal + "ms");
+        return array;
     }
 }
