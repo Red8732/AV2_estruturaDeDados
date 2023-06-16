@@ -2,6 +2,9 @@ package algoritmosOrdenacao;
 
 public class HeapSort {
 	
+	private static int comparacoes = 0;
+	private static int movimentacoes = 0;
+	
 	public static int[] sort(int[] v) {
         buildMaxHeap(v);
         int n = v.length;
@@ -28,8 +31,10 @@ public class HeapSort {
             if (right < tamanhoDoVetor && vetor[max] < vetor[right]) {
                 max = right;
             }
+            comparacoes++;
             if (vetor[max] > vetor[pos]) {
                 swap(vetor, max, pos);
+                movimentacoes++;
                 maxHeapify(vetor, max, tamanhoDoVetor);
             }
         }
@@ -41,12 +46,15 @@ public class HeapSort {
         v[aposJ] = aux;
     }
     
-    public int[] heapSort(int[] array) {
-        long tempoinicial = System.currentTimeMillis();
+    public int[] heapSort(int[] array, String tipoDoVetor) {
+        long tempoinicial = System.nanoTime();
         array = HeapSort.sort(array);
-        long tempofinal = System.currentTimeMillis();
+        long tempofinal = System.nanoTime();
         long tempototal = tempofinal - tempoinicial;
-        System.out.println("Tempo de Processamento de HeapSort: " + tempototal + "ms");
+        System.out.println("Tempo de Processamento de HeapSort em nanosegundos: " + tempototal + "ns" + "  --->  " + (tempototal * 0.000000001) + " segundos."
+ 			   + "\n\nTipo do vetor: " + tipoDoVetor + ", de tamanho: " + array.length
+ 			   + "\nNumero de comparacoes de chaves: " + comparacoes
+ 			   + "\nNumero de movimentacoes de registro efetuadas: " + movimentacoes);
         return array;
     }
 }
