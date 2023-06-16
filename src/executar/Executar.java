@@ -30,12 +30,24 @@ public class Executar {
 	
 	public static void main(String[] args) throws IOException {
 		
-		// Exemplo de como executar:
-		int[] vetor = a.preencher(1000);
-		gerarArquivo(vetor, "insertionSort-antes");
+// ===================================================================
 		
+// Exemplo de como executar o InsertionSort com um vetor do tipo Aleatorio:
+		
+	 /* int[] vetor = a.preencher(tamanhoDoVetor);
+	  
+		gerarArquivo(vetor, "insertionSort-antes");
 		vetor = insertion.insertionSort(vetor, "Aleatorio");
-		gerarArquivo(vetor, "insertionSort-depois");
+		gerarArquivo(vetor, "insertionSort-depois"); */
+		
+// ===================================================================
+		
+		int[] vetor1 = i.preencher(1000);
+		
+		gerarArquivo(vetor1, "quickSort-antes");
+		vetor1 = quick.quickSort(vetor1, "Inversamente Ordenado");
+		gerarArquivo(vetor1, "quickSort-depois");
+		
 	}
 	
 	public static void print(int[] vetor) {
